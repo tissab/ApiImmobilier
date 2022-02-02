@@ -1,0 +1,7 @@
+create EXTENSION if not exists "uuid-ossp"
+
+create table if not exists Immobilier (
+    Entity_id uuid  PRIMARY key,
+    Jsondata jsonb not null
+);
+create index if not exists idximmobilier on Immobilier using gin (Jsondata);
